@@ -1,2 +1,0 @@
-c:\users\ionut.enache\documents\visual studio 2013\Projects\Syntax\Syntax\bin\Debug\Syntax.exe.config
-G:\GitHubWorkspace\C-Fundamentals\Syntax\Syntax\bin\Debug\Syntax.exe.config
