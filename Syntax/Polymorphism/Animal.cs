@@ -1,12 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Polymorphism
 {
-    abstract class Animal
+    abstract class Animal: IAnimal
     {
         //poate fi extinsa folosind override in clasele derivate
         public virtual void Walk()
@@ -21,6 +19,8 @@ namespace Polymorphism
         {
             Console.WriteLine("I eat what I want!");
         }
+
+        public int Age { get; set; }
     }
 
     //clasa derivata

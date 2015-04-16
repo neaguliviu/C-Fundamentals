@@ -24,8 +24,11 @@ namespace Polymorphism
             duck3.Eat();
 
             Console.WriteLine("Cat walking:");
-            Cat cat=new Cat();
+            var cat=new Cat();
+            cat.Age = 10;
             cat.Walk();
+            Console.WriteLine("Cat's age:");
+            Console.WriteLine(cat.Age);
             Console.ReadLine();
         }
     }
