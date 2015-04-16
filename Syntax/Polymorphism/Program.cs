@@ -18,14 +18,16 @@ namespace Polymorphism
             duck2.Eat();
             duck2.Eat("pizza");
 
-
+            //apeleaza metoda din clasa de baza
             Console.WriteLine("duck 3 eating:");
             Animal duck3 = duck2;
             duck3.Eat();
 
             Console.WriteLine("Cat walking:");
-            var cat=new Cat();
-            cat.Age = 10;
+            var cat = new Cat
+            {
+                Age = 10
+            };
             cat.Walk();
             Console.WriteLine("Cat's age:");
             Console.WriteLine(cat.Age);

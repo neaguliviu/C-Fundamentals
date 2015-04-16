@@ -40,7 +40,8 @@ namespace Polymorphism
             Console.WriteLine("Quack");
         }
 
-        public  override void Walk()
+        //metoda nu mai este virtuala pentru clasele care mostenesc din Duck
+        public sealed override void Walk()
         {
             Console.WriteLine("On 2 legs");
             //daca vrem sa apelam si metoda de baza folosim base
@@ -48,13 +49,14 @@ namespace Polymorphism
         }
 
         //nu e comportament polimorfic
+        //ascunde metoda din clasa de baza
         public new void Eat()
         {
             Console.WriteLine("I eat what ducks eat");
         }
 
         //overloading - 2 metode cu aceeasi denumire
-        public void Eat(string food)
+        public  void Eat(string food)
         {
             Console.WriteLine("Ducks eat:{0}", food);
         }
