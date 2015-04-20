@@ -8,7 +8,7 @@ namespace Generics
 {
     public class TemplateClass<T>
     {
-        public void method(T param)
+        public void Method(T param)
         {
             Console.WriteLine("Parametrul transmis este: {0}\n", param);
         }
@@ -23,7 +23,7 @@ namespace Generics
             this.field = value;
         }
 
-        public T method<U, V>(U param1, V param2)
+        public T Method<U, V>(U param1, V param2)
         {
             Console.WriteLine("{0}, {1}", param1.ToString(), param2.ToString());
 
@@ -53,23 +53,23 @@ namespace Generics
         static void Main(string[] args)
         {
             TemplateClass<double> obiect1 = new TemplateClass<double>();
-            obiect1.method(30.44);
+            obiect1.Method(30.44);
 
             TemplateClass<string> obiect2 = new TemplateClass<string>();
-            obiect2.method("un sir de caractere");
+            obiect2.Method("un sir de caractere");
 
             var car = new Car("Audi", 25000);
             TemplateClass<Car> obiect3 = new TemplateClass<Car>();
-            obiect3.method(car);
+            obiect3.Method(car);
 
             Console.ReadKey();
 
 
             GenericMethod<int> obiect4 = new GenericMethod<int>(100);
-            Console.WriteLine("Generic methode result type {0}", obiect4.method<int, double>(39, 38.2).GetType().ToString());
+            Console.WriteLine("Generic methode result type {0}", obiect4.Method<int, double>(39, 38.2).GetType().ToString());
 
             GenericMethod<Car> obiect5 = new GenericMethod<Car>(car);
-            Console.WriteLine("Generic methode result type {0}", obiect5.method<string, double>(car.type, car.price).GetType().ToString());
+            Console.WriteLine("Generic methode result type {0}", obiect5.Method<string, double>(car.type, car.price).GetType().ToString());
 
 
             Console.ReadKey();

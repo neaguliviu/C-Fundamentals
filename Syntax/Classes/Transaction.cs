@@ -113,16 +113,16 @@ namespace Classes
          * ITransaction implementation:
          */
 
-        public decimal getAmount()
+        public decimal GetAmount()
         {
             return this.detail.amount ?? 0;
         }
 
-        public void showTransaction()
+        public void ShowTransaction()
         {
             Console.WriteLine("\nTransaction: {0}", transactionCode);
             Console.WriteLine("Date: {0}", date);
-            Console.WriteLine("Amount: {0}", getAmount());
+            Console.WriteLine("Amount: {0}", GetAmount());
             Console.WriteLine("Transaction detail: {0}", detail.ToString());
         }
 

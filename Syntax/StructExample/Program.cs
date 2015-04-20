@@ -32,6 +32,13 @@ namespace StructExample
          * Struct members cannot be declared as protected because structs do not support inheritance.
          */
 
+        public Complex(double real, double imaginar)
+        {
+            this.real = real;
+            this.imaginar = imaginar;
+            this.modul = 0;
+        }
+
         public void CalculateAbsoluteValue()
         {
             this.modul = Math.Sqrt(Math.Pow(this.real, 2) + Math.Pow(this.imaginar, 2));
@@ -52,10 +59,28 @@ namespace StructExample
             z.imaginar = 3;
             z.CalculateAbsoluteValue();
 
+            // ... or:
+            /*
+                Complex z = new Complex
+                {
+                    real = 4,
+                    imaginar = 3
+                };
+                z.CalculateAbsoluteValue();
+            */
+
             Console.WriteLine("\n\n---===Struct===---\n");
             Console.WriteLine(z.ToString());
             Console.WriteLine("Modulul: {0}", z.modul);
             Console.ReadKey();
+
+            Complex z2 = new Complex(5, 3);
+            z2.CalculateAbsoluteValue();
+            Console.WriteLine("\n\n---===Struct===---\n");
+            Console.WriteLine(z2.ToString());
+            Console.WriteLine("Modulul: {0}", z2.modul);
+            Console.ReadKey();
+
         }
     }
 }
