@@ -17,8 +17,7 @@ namespace EnumExample
             Console.WriteLine("Fri = {0}", (int)DaysEnum.Fri);
             Console.WriteLine("Sat = {0}", (int)DaysEnum.Sat);
             Console.ReadKey();
-
-
+            
 
             IEnumerable<DaysEnum> list = new List<DaysEnum>() { DaysEnum.Mon, DaysEnum.Tue, DaysEnum.Wed, DaysEnum.Thu, DaysEnum.Fri };
 
@@ -27,19 +26,6 @@ namespace EnumExample
             foreach (DaysEnum day in list)
             {
                 Console.WriteLine(Enum.GetName(typeof(DaysEnum), day));
-            }
-            Console.ReadKey();
-
-
-            // ... is equivalent with: 
-            Console.WriteLine("\n\nWorking days:");
-            using (var enumerator = list.GetEnumerator())
-            {
-                while (enumerator.MoveNext())
-                {
-                    DaysEnum day = enumerator.Current;
-                    Console.WriteLine(Enum.GetName(typeof(DaysEnum), day));
-                }
             }
             Console.ReadKey();
 
@@ -53,20 +39,6 @@ namespace EnumExample
             }
             Console.ReadKey();
 
-
-            Console.WriteLine("\n\nFirst twenty numbers in Fibonacci series:");
-            var helper = new EnumHelper();
-            var fibonacci = helper.Fibonacci();
-            var firstFibonacci = helper.FirstTwenty(fibonacci);
-            foreach (var n in firstFibonacci)
-            {
-                Console.WriteLine(n);
-            }
-            Console.ReadKey();
-
-
-        }
-
-        
+        }        
     }
 }

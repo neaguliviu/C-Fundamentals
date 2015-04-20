@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syntax", "Syntax\Syntax.csproj", "{36A6F30B-EE86-40FD-9CD0-C6260608360D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Polymorphism", "Polymorphism\Polymorphism.csproj", "{7285657E-5F9F-457F-8D0E-A333EB11C5C9}"
@@ -22,6 +24,7 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Threads", "Threads\Threads.csproj", "{62084A44-AAAE-41FF-AB30-B434D949BE24}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValueVsReferenceTypes", "ValueVsReferenceTypes\ValueVsReferenceTypes.csproj", "{8C401827-1BC1-4473-8088-6620855A94A7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Generics", "Generics\Generics.csproj", "{12B4F16B-2B74-4836-BF8C-4DEF7013EEAC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -143,6 +146,10 @@ Global
 		{8C401827-1BC1-4473-8088-6620855A94A7}.Release|Mixed Platforms.Build.0 = Release|x86
 		{8C401827-1BC1-4473-8088-6620855A94A7}.Release|x86.ActiveCfg = Release|x86
 		{8C401827-1BC1-4473-8088-6620855A94A7}.Release|x86.Build.0 = Release|x86
+		{12B4F16B-2B74-4836-BF8C-4DEF7013EEAC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B4F16B-2B74-4836-BF8C-4DEF7013EEAC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B4F16B-2B74-4836-BF8C-4DEF7013EEAC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B4F16B-2B74-4836-BF8C-4DEF7013EEAC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
