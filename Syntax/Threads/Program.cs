@@ -14,7 +14,7 @@ namespace Threads
             Go();
             Console.ReadKey(); // Call Go() on the main thread
         }
-
+        
         static void Go()
         {
             // Declare and use a local variable - 'cycles'

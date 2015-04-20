@@ -29,7 +29,7 @@ namespace DelegateExample
             Console.ReadKey();
 
 
-            // Instantiate delegate with anonymous methode:
+            // Instantiate delegate with anonymous method:
             DelegateTest dt2 = delegate(List<double> input)
             {
                 return input.Any() ? input.Sum() / input.Count() : 0;

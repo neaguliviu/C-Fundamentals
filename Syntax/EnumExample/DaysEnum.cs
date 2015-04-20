@@ -7,7 +7,7 @@
 
         [Description("Sunday")]
         Sun, // = 0
-        [Description("Mondey")]
+        [Description("Monday")]
         Mon, // = 1
         [Description("Tuesday")]
         Tue, // = 2
