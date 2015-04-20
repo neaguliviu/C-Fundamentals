@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StructExample
 {
-    public struct complex
+    public struct Complex
     {
         public double real, imaginar, modul;
 
@@ -51,7 +51,7 @@ namespace StructExample
     {
         static void Main(string[] args)
         {
-            complex z = new complex();
+            Complex z = new Complex();
             z.real = 4;
             z.imaginar = 3;
             z.CalculateAbsoluteValue();
