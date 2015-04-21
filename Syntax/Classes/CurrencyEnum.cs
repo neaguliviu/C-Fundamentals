@@ -1,6 +1,5 @@
 ﻿namespace Classes
 {
-    using System;
     using System.ComponentModel;
 
     public enum CurrencyEnum

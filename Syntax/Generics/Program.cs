@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Generics
+﻿namespace Generics
 {
+    using System;
+
     public class TemplateClass<T>
     {
         public void Method(T param)
@@ -16,35 +12,35 @@ namespace Generics
 
     public class GenericMethod<T>
     {
-        T field;
+        T Field;
 
         public GenericMethod(T value)
         {
-            this.field = value;
+            this.Field = value;
         }
 
-        public T Method<U, V>(U param1, V param2)
+        public T Method<TU, TV>(TU param1, TV param2)
         {
             Console.WriteLine("{0}, {1}", param1.ToString(), param2.ToString());
 
-            return field;
+            return Field;
         }
     }
 
 
     public class Car {
-        public string type { get; set; }
-        public double price { get; set; }
+        public string Type { get; set; }
+        public double Price { get; set; }
 
         public Car(string type, double price)
         {
-            this.type = type;
-            this.price = price;
+            this.Type = type;
+            this.Price = price;
         }
 
         public override string ToString()
         {
-            return string.Format("Car | type: {0} | price: {1}", type, price);
+            return string.Format("Car | type: {0} | price: {1}", Type, Price);
         }
     }
 
@@ -69,7 +65,7 @@ namespace Generics
             Console.WriteLine("Generic methode result type {0}", obiect4.Method<int, double>(39, 38.2).GetType().ToString());
 
             GenericMethod<Car> obiect5 = new GenericMethod<Car>(car);
-            Console.WriteLine("Generic methode result type {0}", obiect5.Method<string, double>(car.type, car.price).GetType().ToString());
+            Console.WriteLine("Generic methode result type {0}", obiect5.Method<string, double>(car.Type, car.Price).GetType().ToString());
 
 
             Console.ReadKey();

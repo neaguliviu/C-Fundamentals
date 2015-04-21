@@ -1,7 +1,5 @@
 ﻿namespace Classes
 {
-    using System;
-
     internal interface ITransaction
     {
         void ShowTransaction();
