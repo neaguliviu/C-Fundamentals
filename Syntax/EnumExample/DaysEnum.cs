@@ -1,6 +1,5 @@
 ﻿namespace EnumExample
 {
-    using System;
     using System.ComponentModel;
 
     public enum DaysEnum { 

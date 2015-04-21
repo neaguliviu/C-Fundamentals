@@ -4,7 +4,7 @@ namespace StructExample
 {
     public struct Complex
     {
-        public double real, imaginar, modul;
+        public double Real, Imaginar, Modul;
 
         /* 
          * Wrong:
@@ -32,14 +32,21 @@ namespace StructExample
          * Struct members cannot be declared as protected because structs do not support inheritance.
          */
 
+        public Complex(double real, double imaginar)
+        {
+            this.Real = real;
+            this.Imaginar = imaginar;
+            this.Modul = 0;
+        }
+
         public void CalculateAbsoluteValue()
         {
-            this.modul = Math.Sqrt(Math.Pow(this.real, 2) + Math.Pow(this.imaginar, 2));
+            this.Modul = Math.Sqrt(Math.Pow(this.Real, 2) + Math.Pow(this.Imaginar, 2));
         }
 
         public override string ToString()
         {
-            return String.Format("Numarul complex parte reala = {0} si parte imaginara = {1}", this.real, this.imaginar);
+            return String.Format("Numarul complex parte reala = {0} si parte imaginara = {1}", this.Real, this.Imaginar);
         }
     }
 
@@ -47,15 +54,33 @@ namespace StructExample
     {
         static void Main(string[] args)
         {
-            Complex z = new Complex();
-            z.real = 4;
-            z.imaginar = 3;
+            var z = new Complex();
+            z.Real = 4;
+            z.Imaginar = 3;
             z.CalculateAbsoluteValue();
+
+            // ... or:
+            /*
+                Complex z = new Complex
+                {
+                    real = 4,
+                    imaginar = 3
+                };
+                z.CalculateAbsoluteValue();
+            */
 
             Console.WriteLine("\n\n---===Struct===---\n");
             Console.WriteLine(z.ToString());
-            Console.WriteLine("Modulul: {0}", z.modul);
+            Console.WriteLine("Modulul: {0}", z.Modul);
             Console.ReadKey();
+
+            var z2 = new Complex(5, 3);
+            z2.CalculateAbsoluteValue();
+            Console.WriteLine("\n\n---===Struct===---\n");
+            Console.WriteLine(z2.ToString());
+            Console.WriteLine("Modulul: {0}", z2.Modul);
+            Console.ReadKey();
+
         }
     }
 }

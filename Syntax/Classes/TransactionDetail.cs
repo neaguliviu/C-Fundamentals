@@ -1,26 +1,12 @@
 ﻿namespace Classes
 {
-    using System;
-
     public class TransactionDetail
     {
-        public decimal? amount;
-        internal decimal? tax;
-        protected int? currency;
-        private bool? isValid;
-        const string type = "Transaction";
-
-        public int? Currency
-        {
-            get { return this.currency; }
-            set { this.currency = value; }
-        }
-
-        public bool? IsValid
-        {
-            get { return this.isValid; }
-            set { this.isValid = value; }
-        }
+        public decimal? Amount;
+        internal decimal? Tax;
+        internal int? Currency;
+        public bool? IsValid;
+        const string Type = "Transaction";
 
         public override string ToString()
         {
@@ -28,10 +14,10 @@
              * In assignment, left side must be a variable, not constant.
              * this.type = "Payment";
              */
-            CurrencyEnum currentCurrency = (CurrencyEnum)this.Currency;
+            var currentCurrency = (CurrencyEnum)this.Currency;
 
-            return string.Format("{0}: {1}, Tax(%): {2}, Coin: {3}, Valid: {4}", type,
-                this.amount, this.tax, currentCurrency, this.isValid.HasValue && (bool)this.isValid ? string.Format("Yes") : string.Format("No"));
+            return string.Format("{0}: {1}, Tax(%): {2}, Coin: {3}, Valid: {4}", Type,
+                this.Amount, this.Tax, currentCurrency, this.IsValid.HasValue && (bool)this.IsValid ? string.Format("Yes") : string.Format("No"));
 
         }
     }

@@ -1,27 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Classes
+﻿namespace Classes
 {
+    using System;
+
     public partial class Transaction : ITransaction, ICloneable
     {
-        internal string transactionCode { get; set; }
-        internal DateTime? date;
-        internal TransactionDetail detail { get; set; }
-        internal readonly decimal amountWithoutTax; 
+        internal string TransactionCode { get; set; }
+        internal DateTime? Date;
+        internal TransactionDetail Detail { get; set; }
+        internal readonly decimal AmountWithoutTax; 
 
         public Transaction()
         {
-            transactionCode = null;
-            date = null;
-            amountWithoutTax = 0; 
-            detail = new TransactionDetail
+            TransactionCode = null;
+            Date = null;
+            AmountWithoutTax = 0;
+            Detail = new TransactionDetail
             {
-                amount = null,
-                tax = null,
+                Amount = null,
+                Tax = null,
                 Currency = null,
                 IsValid = null
             };
@@ -29,44 +25,44 @@ namespace Classes
 
         public Transaction(string tCode, DateTime date, decimal sum, decimal tax, int currency, bool isValid)
         {
-            this.transactionCode = tCode;
-            this.date = date;
-            detail = new TransactionDetail
+            this.TransactionCode = tCode;
+            this.Date = date;
+            Detail = new TransactionDetail
             {
-                amount = sum,
-                tax = tax,
+                Amount = sum,
+                Tax = tax,
                 Currency = currency,
                 IsValid = isValid
             };
-            amountWithoutTax = this.detail.amount != null && this.detail.tax != null ? (decimal)(this.detail.amount * (1 - this.detail.tax / 100)) : 0; 
+            AmountWithoutTax = this.Detail.Amount != null && this.Detail.Tax != null ? (decimal)(this.Detail.Amount * (1 - this.Detail.Tax / 100)) : 0; 
         }
 
         public Transaction(string tCode, DateTime date, TransactionDetail td)
         {
-            this.transactionCode = tCode;
-            this.date = date;
-            detail = new TransactionDetail
+            this.TransactionCode = tCode;
+            this.Date = date;
+            Detail = new TransactionDetail
             {
-                amount = td.amount,
-                tax = td.tax,
+                Amount = td.Amount,
+                Tax = td.Tax,
                 Currency = td.Currency,
                 IsValid = td.IsValid
             };
-            amountWithoutTax = this.detail.amount != null && this.detail.tax != null ? (decimal)(this.detail.amount * (1 - this.detail.tax / 100)) : 0; 
+            AmountWithoutTax = this.Detail.Amount != null && this.Detail.Tax != null ? (decimal)(this.Detail.Amount * (1 - this.Detail.Tax / 100)) : 0; 
         }
 
         public Transaction(Transaction t)
         {
-            this.transactionCode = t.transactionCode;
-            this.date = t.date;
-            detail = new TransactionDetail
+            this.TransactionCode = t.TransactionCode;
+            this.Date = t.Date;
+            Detail = new TransactionDetail
             {
-                amount = t.detail.amount,
-                tax = t.detail.tax,
-                Currency = t.detail.Currency,
-                IsValid = t.detail.IsValid
+                Amount = t.Detail.Amount,
+                Tax = t.Detail.Tax,
+                Currency = t.Detail.Currency,
+                IsValid = t.Detail.IsValid
             };
-            amountWithoutTax = this.detail.amount != null && this.detail.tax != null ? (decimal)(this.detail.amount * (1 - this.detail.tax / 100)) : 0; 
+            AmountWithoutTax = this.Detail.Amount != null && this.Detail.Tax != null ? (decimal)(this.Detail.Amount * (1 - this.Detail.Tax / 100)) : 0; 
         }
 
         /*
@@ -89,17 +85,17 @@ namespace Classes
             #region deep copy
             var t = new Transaction
             {
-                transactionCode = this.transactionCode,
+                TransactionCode = this.TransactionCode,
                 /* 
                  * You can assign a value to a ReadOnly variable only in its declaration or in the constructor of a class or structure in which it is defined.
                  */
                 //date = this.date,
-                detail = new TransactionDetail
+                Detail = new TransactionDetail
                 {
-                    amount = this.detail.amount,
-                    tax = this.detail.tax,
-                    Currency = this.detail.Currency,
-                    IsValid = this.detail.IsValid
+                    Amount = this.Detail.Amount,
+                    Tax = this.Detail.Tax,
+                    Currency = this.Detail.Currency,
+                    IsValid = this.Detail.IsValid
                 }
             };
             return t;
@@ -113,17 +109,17 @@ namespace Classes
          * ITransaction implementation:
          */
 
-        public decimal getAmount()
+        public decimal GetAmount()
         {
-            return this.detail.amount ?? 0;
+            return this.Detail.Amount ?? 0;
         }
 
-        public void showTransaction()
+        public void ShowTransaction()
         {
-            Console.WriteLine("\nTransaction: {0}", transactionCode);
-            Console.WriteLine("Date: {0}", date);
-            Console.WriteLine("Amount: {0}", getAmount());
-            Console.WriteLine("Transaction detail: {0}", detail.ToString());
+            Console.WriteLine("\nTransaction: {0}", TransactionCode);
+            Console.WriteLine("Date: {0}", Date);
+            Console.WriteLine("Amount: {0}", GetAmount());
+            Console.WriteLine("Transaction detail: {0}", Detail.ToString());
         }
 
     }
